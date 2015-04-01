@@ -21,3 +21,11 @@ end
 
 # At this point, it doesn't matter if you type in localhost:4567/fsdjkal , there's no error, but it will just show "Just Do It"
 # As opposed to the other info that's found in the '/' (root) route. 
+
+post '/' do   # 'post' verb/method as opposed to 'get' here. This means it only responds to 'POST' requests. You can define
+              # multiple handlers to the same route (eg. '/'), but have 2 separate blocks to run based on the method type 
+              # of request.
+              
+  @task = params[:task]
+  slim :task
+end
